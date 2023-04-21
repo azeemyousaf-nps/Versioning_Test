@@ -21,6 +21,7 @@ env:
 
 jobs:
   gitversion:
+    permissions: write-all
     name: gitversion
     runs-on: ubuntu-latest
     steps:
