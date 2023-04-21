@@ -1,11 +1,11 @@
 on:
   pull_request:
     branches:
-    - develop
+    - Development
     - main
   push:
     branches:
-    - develop
+    - Development
     - main
     - 'release/**'
     - 'hotfix/**'
