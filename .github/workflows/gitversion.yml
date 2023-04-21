@@ -1,11 +1,11 @@
 on:
   pull_request:
     branches:
-    - Development
+    - develop
     - main
   push:
     branches:
-    - Development
+    - develop
     - main
     - 'release/**'
     - 'hotfix/**'
@@ -23,13 +23,13 @@ env:
 jobs:
   gitversion:
     name: gitversion
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Fetch all history for all tags and branches
-      run: git fetch --unshallow && git checkout Development && git checkout main
+      run: git fetch --unshallow && git checkout develop && git checkout main
 
     #- name: Check base ref
     #  run: echo "baseref='$GITHUB_BASE_REF' ref='$GITHUB_REF' headref='$GITHUB_HEAD_REF' refname='$GITHUB_REF_NAME' eventname='$GITHUB_EVENT_NAME'"
