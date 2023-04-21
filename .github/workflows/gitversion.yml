@@ -53,14 +53,8 @@ jobs:
           DIFF_DEST="${GITHUB_HEAD_REF}"
           DIFF_SOURCE="${GITHUB_BASE_REF}"
         fi
-        # use main as source if current branch is a release branch
-        if [ "$(echo "${DIFF_DEST}" | grep -o '^release/')" = "release/" ]; then
-          DIFF_SOURCE="main"
-        fi
-        # use main as source if current branch is a hotfix branch
-        if [ "$(echo "${DIFF_DEST}" | grep -o '^hotfix/')" = "hotfix/" ]; then
-          DIFF_SOURCE="main"
-        fi
+        
+        DIFF_SOURCE="main"
 
         # service change calculation with diff - ideally use something like 'plz' or 'bazel'
         if [ "$(git diff "${DIFF_SOURCE}" "${DIFF_DEST}" --name-only | grep -o '^common/' > /dev/null && echo 'common changed')" = 'common changed' ]; then
