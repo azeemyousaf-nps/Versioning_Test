@@ -8,6 +8,7 @@ env:
   PROJECT_PATH: 'TestNuget/TestNuget.csproj'
   PACKAGE_OUTPUT: ${{ github.workspace }}\output
   NUGET_URL: 'https://nuget.npssites.com/nuget/'
+  NUGET_PASWORD: ${{ secrets.NUGET_PASWORD }}
 
 jobs:
   gitversion:
@@ -15,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      env:
-        NUGET_PASWORD: ${{ secrets.NUGET_PASWORD }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
