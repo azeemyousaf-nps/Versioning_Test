@@ -9,6 +9,8 @@ env:
   PACKAGE_OUTPUT: ${{ github.workspace }}/output
   NUGET_URL: 'https://nuget.npssites.com/nuget/'
   NUGET_PASWORD: ${{ secrets.NUGET_PASWORD }}
+  NUGET_PASSWORD: ${{ secrets.NUGET_PASSWORD }}
+  NUGET_USERNAME: ${{ secrets.NUGET_USERNAME }}
 
 jobs:
   gitversion:
@@ -50,7 +52,10 @@ jobs:
           prerelease: false
 
       - name: pack
-        run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }}
+        run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }} --include-symbols -p:PackageVersion=${{ steps.versioning.outputs.version }}
+
+      - name: "Add source"
+        run: dotnet nuget add source https://nuget.npssites.com/nuget/ -n "newpark nuget" -u ${{ env.NUGET_USERNAME }} -p ${{ env.NUGET_PASSWORD }} --store-password-in-clear-text
 
       - name: Push
         run: dotnet nuget push /home/runner/work/Versioning_Test/Versioning_Test/output/*.nupkg -k ${{ env.NUGET_PASWORD }} -s https://nuget.npssites.com/nuget/
