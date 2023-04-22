@@ -31,12 +31,12 @@ jobs:
         
       - name: Semantic versioning
         id: versioning
-        uses: PaulHatch/semantic-version@v4.0.2
+        uses: PaulHatch/semantic-version@v5.0.3
         with:
           branch: main
           tag_prefix: "v"
-          major_pattern: "BREAKING CHANGE:"
-          minor_pattern: "feat:"
+          major_pattern: "feat:"
+          minor_pattern: "chore:"
           format: "v${major}.${minor}.${patch}"
 
       - name: Create Release
