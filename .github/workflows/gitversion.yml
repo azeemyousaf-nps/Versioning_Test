@@ -37,7 +37,7 @@ jobs:
 
 
       - name: build
-        run: dotnet build  ${{ env.PROJECT_PATH }} --no-restore --configuration Release -p:PackageVersion=${{ steps.versioning.outputs.version }}
+        run: dotnet build  ${{ env.PROJECT_PATH }} --no-restore --configuration Release --version-suffix ${{ steps.versioning.outputs.version }}
 
       - name: Create Release
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
