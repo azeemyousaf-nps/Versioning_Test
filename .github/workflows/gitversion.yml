@@ -10,8 +10,7 @@ env:
   NUGET_PASWORD: ${{ secrets.NUGET_PASWORD }}
   NUGET_PASSWORD: ${{ secrets.NUGET_PASSWORD }}
   NUGET_USERNAME: ${{ secrets.NUGET_USERNAME }}
-  originalString : ""
-  modifiedString : ""
+
 jobs:
   gitversion:
     permissions: write-all
@@ -51,15 +50,8 @@ jobs:
           release_name: ${{ steps.versioning.outputs.version }}
           prerelease: false
 
-      - name: Remove first character from variable
-        id: formattedVersioning
-        run: |
-          originalString=${{ steps.versioning.outputs.version  }}
-          modifiedString=${{ originalString:1 }}
-          echo $modifiedString
-
       - name: Pack
-        run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }} --include-symbols -p:PackageVersion=${{ steps.formattedVersioning.outputs.version }}
+        run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }} --include-symbols -p:PackageVersion=${{ steps.versioning.outputs.version }}
 
       - name: "Add source"
         run: dotnet nuget add source https://nuget.npssites.com/nuget/ -n "newpark nuget" -u ${{ env.NUGET_USERNAME }} -p "${{ env.NUGET_PASSWORD }}" --store-password-in-clear-text
