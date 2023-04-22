@@ -10,7 +10,8 @@ env:
   NUGET_PASWORD: ${{ secrets.NUGET_PASWORD }}
   NUGET_PASSWORD: ${{ secrets.NUGET_PASSWORD }}
   NUGET_USERNAME: ${{ secrets.NUGET_USERNAME }}
-
+  originalString : ""
+  modifiedString : ""
 jobs:
   gitversion:
     permissions: write-all
