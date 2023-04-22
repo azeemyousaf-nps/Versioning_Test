@@ -10,6 +10,6 @@ namespace TestNuget.Calculation
         public static double Subtract(double a, double b) { return a - b; }
         public static double Multiply(double a, double b) { return a * b; }
         public static double Divide(double a, double b) { return a / b; }
-        public static double PowerOfTwo(int a) { return a^2; }
+        public static double Modular(int a, int mod) { return a % mod; }
     }
 }
