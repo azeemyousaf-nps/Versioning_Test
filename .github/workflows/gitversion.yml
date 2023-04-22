@@ -36,7 +36,7 @@ jobs:
         with:
           branch: main
           major_pattern: "feat:"
-          minor_pattern: "chore:"
+          minor_pattern: "bug:"
           format: "${major}.${minor}.${patch}"
 
       - name: Create Release
