@@ -37,7 +37,7 @@ jobs:
           tag_prefix: ""
           major_pattern: "feat:"
           minor_pattern: "chore:"
-          format: "v${major}.${minor}.${patch}"
+          format: "${major}.${minor}.${patch}"
 
       - name: Create Release
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
