@@ -35,6 +35,7 @@ jobs:
         uses: PaulHatch/semantic-version@v4.0.2
         with:
           branch: main
+          tag_prefix: "v"
           major_pattern: "feat:"
           minor_pattern: "chore:"
           format: "${major}.${minor}.${patch}"
@@ -45,8 +46,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
-          tag_name: ${{ steps.versioning.outputs.version }}
-          release_name: ${{ steps.versioning.outputs.version }}
+          tag_name: $v{{ steps.versioning.outputs.version }}
+          release_name: $v{{ steps.versioning.outputs.version }}
           prerelease: false
 
       - name: Pack
