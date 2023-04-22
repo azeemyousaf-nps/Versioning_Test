@@ -55,7 +55,7 @@ jobs:
         run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }} --include-symbols 
 
       - name: "Add source"
-        run: dotnet nuget add source https://nuget.npssites.com/nuget/ -n "newpark nuget" -u ${{ env.NUGET_USERNAME }} -p ${{ env.NUGET_PASSWORD }} --store-password-in-clear-text
+        run: dotnet nuget add source https://nuget.npssites.com/nuget/ -n "newpark nuget" -u ${{ env.NUGET_USERNAME }} -p "${{ env.NUGET_PASSWORD }}"" --store-password-in-clear-text
 
       - name: Push
         run: dotnet nuget push /home/runner/work/Versioning_Test/Versioning_Test/output/*.nupkg -k ${{ env.NUGET_PASWORD }} -s https://nuget.npssites.com/nuget/
