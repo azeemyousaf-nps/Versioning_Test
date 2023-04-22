@@ -6,7 +6,7 @@ on:
 
 env:
   PROJECT_PATH: 'TestNuget/TestNuget.csproj'
-  PACKAGE_OUTPUT: ${{ github.workspace }}\output
+  PACKAGE_OUTPUT: ${{ github.workspace }}/output
   NUGET_URL: 'https://nuget.npssites.com/nuget/'
   NUGET_PASWORD: ${{ secrets.NUGET_PASWORD }}
 
