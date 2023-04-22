@@ -53,5 +53,5 @@ jobs:
         run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.versioning.outputs.version }} --output ${{ env.PACKAGE_OUTPUT }}
 
       - name: Push
-        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT }}\*.nupkg -k ${{ env.NUGET_PASWORD }} -s ${{ env.NUGET_URL }}
+        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT }}\${{ steps.versioning.outputs.version }}.nupkg -k ${{ env.NUGET_PASWORD }} -s ${{ env.NUGET_URL }}
 
