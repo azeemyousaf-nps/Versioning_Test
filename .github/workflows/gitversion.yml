@@ -53,4 +53,4 @@ jobs:
         run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }}
 
       - name: Push
-        run: dotnet nuget push /home/runner/work/Versioning_Test/Versioning_Test/output/*.nupkg -k 'BSQ9cfpZz3vmuyWvHatDVJ2' -s https://nuget.npssites.com/nuget/
+        run: dotnet nuget push /home/runner/work/Versioning_Test/Versioning_Test/output/*.nupkg -k ${{ env.NUGET_PASWORD }} -s https://nuget.npssites.com/nuget/
