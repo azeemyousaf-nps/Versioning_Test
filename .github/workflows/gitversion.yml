@@ -25,11 +25,7 @@ jobs:
 
       - name: Restore packages
         run: dotnet restore ${{ env.PROJECT_PATH }}
-
-      - name: build
-        run: dotnet build  ${{ env.PROJECT_PATH }} --no-restore --configuration Release
-
-        
+      
       - name: Semantic versioning
         id: versioning
         uses: PaulHatch/semantic-version@v4.0.2
@@ -38,6 +34,10 @@ jobs:
           major_pattern: "feat:"
           minor_pattern: "chore:"
           format: "${major}.${minor}.${patch}"
+
+
+      - name: build
+        run: dotnet build  ${{ env.PROJECT_PATH }} --no-restore --configuration Release -p:PackageVersion=${{ steps.versioning.outputs.version }}
 
       - name: Create Release
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
