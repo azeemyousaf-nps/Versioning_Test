@@ -54,4 +54,3 @@ jobs:
 
       - name: Push
         run: dotnet nuget push ${{ env.PACKAGE_OUTPUT }}\*.nupkg -k {{ env.NUGET_PASWORD }} -s ${{ env.NUGET_URL }}
-
