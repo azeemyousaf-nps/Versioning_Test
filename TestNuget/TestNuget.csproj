@@ -4,14 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Nullable>disable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.0.0</FileVersion>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageId>Azeem.Calculator</PackageId>
     <Title>Calculator</Title>
     <PackageProjectUrl>https://newparksolutions.com</PackageProjectUrl>
     <PackageTags>Azeem;Calculator;Helpers</PackageTags>
     <PackageReleaseNotes>This is initial Release</PackageReleaseNotes>
     <Version />
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
   </PropertyGroup>
 
 </Project>
