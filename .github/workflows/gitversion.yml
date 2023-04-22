@@ -51,7 +51,7 @@ jobs:
           release_name: ${{ steps.versioning.outputs.version }}
           prerelease: false
 
-      - name: pack
+      - name: Pack
         run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }} --include-symbols 
 
       - name: "Add source"
