@@ -50,8 +50,8 @@ jobs:
           prerelease: false
 
       - name: pack
-        run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output {{ env.PACKAGE_OUTPUT }}
+        run: dotnet pack  ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT }}
 
       - name: Push
-        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT }}\*.nupkg -k {{ env.NUGET_PASWORD }} -s ${{ env.NUGET_URL }}
+        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT }}\*.nupkg -k ${{ env.NUGET_PASWORD }} -s ${{ env.NUGET_URL }}
 
