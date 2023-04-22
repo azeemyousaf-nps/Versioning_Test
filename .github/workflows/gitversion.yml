@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-
 env:
   PROJECT_PATH: 'TestNuget/TestNuget.csproj'
   PACKAGE_OUTPUT: ${{ github.workspace }}/output
