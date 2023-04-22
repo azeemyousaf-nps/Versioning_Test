@@ -55,7 +55,7 @@ jobs:
         id: formattedVersioning
         run: |
           originalString=${{ steps.versioning.outputs.version  }}
-          modifiedString=${{ originalString.slice(1) }}
+          modifiedString=${{ originalString:1 }}
           echo $modifiedString
 
       - name: Pack
