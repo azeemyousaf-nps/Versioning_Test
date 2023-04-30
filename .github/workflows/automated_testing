@@ -1,0 +1,38 @@
+name: Realse and versioning
+on:
+  pull_request:
+    branches:
+    - main
+env:
+  PROJECT_PATH: 'TestNuget/TestNuget.csproj'
+
+jobs:
+  gitversion:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # Fetch all commits
+          fetch-depth: 0
+
+      - name: Restore packages
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+      
+      - name: Semantic versioning
+        id: versioning
+        uses: PaulHatch/semantic-version@v4.0.2
+        with:
+          branch: main
+          major_pattern: "feat:"
+          minor_pattern: "bug:"
+          format: "${major}.${minor}.${patch}"
+
+
+      - name: build
+        run: dotnet build  ${{ env.PROJECT_PATH }} --no-restore --configuration Release --version-suffix ${{ steps.versioning.outputs.version }}
+
+      - name: Unit Tests
+        run: dotnet test
