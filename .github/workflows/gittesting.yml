@@ -1,6 +1,9 @@
-name: Realse and versioning
+name: Automated Testing
 on:
   pull_request:
+    branches:
+    - main
+  push:
     branches:
     - main
 
@@ -21,7 +24,7 @@ jobs:
 
       - name: Restore packages
         run: dotnet restore ${{ env.PROJECT_PATH }}
-    
+  
 
 
       - name: build
