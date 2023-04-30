@@ -39,7 +39,7 @@ jobs:
       - name: build
         run: dotnet build  ${{ env.PROJECT_PATH }} --no-restore --configuration Release --version-suffix ${{ steps.versioning.outputs.version }}
 
-      - name: build
+      - name: Unit Tests
         run: dotnet test
 
       - name: Create Release
