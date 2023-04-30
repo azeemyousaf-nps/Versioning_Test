@@ -1,5 +1,8 @@
 name: Realse and versioning
 on:
+  pull_request:
+    branches:
+    - main
   push:
     branches:
       - main
