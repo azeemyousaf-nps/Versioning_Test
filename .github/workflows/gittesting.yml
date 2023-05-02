@@ -6,6 +6,7 @@ on:
 
 env:
   PROJECT_PATH: 'TestNuget/TestNuget.csproj'
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   gitversion:
