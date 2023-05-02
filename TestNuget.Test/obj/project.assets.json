@@ -2319,23 +2319,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\azeem\\.nuget\\packages\\": {},
+    "C:\\Users\\Azeem\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Azeem GitHub\\Versioning_Test\\TestNuget.Test\\TestNuget.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Azeem\\Documents\\Github\\Versioning_Test\\TestNuget.Test\\TestNuget.Test.csproj",
       "projectName": "TestNuget.Test",
-      "projectPath": "D:\\Azeem GitHub\\Versioning_Test\\TestNuget.Test\\TestNuget.Test.csproj",
-      "packagesPath": "C:\\Users\\azeem\\.nuget\\packages\\",
-      "outputPath": "D:\\Azeem GitHub\\Versioning_Test\\TestNuget.Test\\obj\\",
+      "projectPath": "C:\\Users\\Azeem\\Documents\\Github\\Versioning_Test\\TestNuget.Test\\TestNuget.Test.csproj",
+      "packagesPath": "C:\\Users\\Azeem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Azeem\\Documents\\Github\\Versioning_Test\\TestNuget.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\azeem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Azeem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2345,15 +2345,14 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.npssites.com/nuget/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Azeem GitHub\\Versioning_Test\\TestNuget\\TestNuget.csproj": {
-              "projectPath": "D:\\Azeem GitHub\\Versioning_Test\\TestNuget\\TestNuget.csproj"
+            "C:\\Users\\Azeem\\Documents\\Github\\Versioning_Test\\TestNuget\\TestNuget.csproj": {
+              "projectPath": "C:\\Users\\Azeem\\Documents\\Github\\Versioning_Test\\TestNuget\\TestNuget.csproj"
             }
           }
         }
